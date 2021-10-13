@@ -27,22 +27,24 @@
         </tr>
         @foreach (var item in Model)
         {
-            <tr>
-                <th>
-                    @Html.DisplayFor(model => item.CategoryID)
-                </th>
-                <th>
-                    @Html.DisplayFor(model => item.CategoryName)
-                </th>
-                <th>
-                    @Html.DisplayFor(model => item.Description)
-                </th>
+        <tr>
+            <th>
+                @Html.DisplayFor(model => item.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayFor(model => item.Description)
+            </th>
 
-                <th>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID }) |
-                </th>
-
-            </tr>
+            <th>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID }) |
+            </th>
+            <th>
+                @Html.ActionLink("DELETE", "Delete", new { id = item.CategoryID }) |
+            </th>
+        </tr>
         }
     </table>
 </div>
