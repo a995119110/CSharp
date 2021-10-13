@@ -1,0 +1,51 @@
+﻿@model IEnumerable<yungching.Models.Categories>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<div>
+    <h4>Categories</h4>
+    <hr />
+    <table id="tCategories" class="table-condensed">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Picture)
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(model => item.CategoryID)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => item.CategoryName)
+                </th>
+                <th>
+                    @Html.DisplayFor(model => item.Description)
+                </th>
+
+                <th>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CategoryID }) |
+                </th>
+
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

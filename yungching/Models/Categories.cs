@@ -11,7 +11,9 @@ namespace yungching.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Categories
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +21,15 @@ namespace yungching.Models
         {
             this.Products = new HashSet<Products>();
         }
-    
+        
+        [DisplayName("CategoryID")]
         public int CategoryID { get; set; }
+        [DisplayName("CategoryName")]
+        [Required(ErrorMessage = "Need Name")]
         public string CategoryName { get; set; }
+        [DisplayName("Description")]
         public string Description { get; set; }
+        [DisplayName("Picture")]
         public byte[] Picture { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
